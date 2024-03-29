@@ -27,11 +27,11 @@ import categoryRouter from "./routes/category.js";
 import positionRouter from "./routes/position.js";
 import analyticsRouter from "./routes/analytics.js";
 
-app.use('/auth', authRouter);
-app.use('/order', orderRouter);
-app.use('/category', categoryRouter);
-app.use('/position', positionRouter);
-app.use('/analytics', analyticsRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/order', orderRouter);
+app.use('/api/category', categoryRouter);
+app.use('/api/position', positionRouter);
+app.use('/api/analytics', analyticsRouter);
 
 
 app.use((req, res, next) => {
