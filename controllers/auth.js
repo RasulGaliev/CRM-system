@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 import User from "../models/User.js"
+import errorHandler from "../utils/errorHandler.js"
 
 const controller = {};
 
@@ -53,10 +54,11 @@ controller.register = async function (req, res) {
             password: bcrypt.hashSync(password, salt)
         });
         try {
-            await user.save()
-            res.status(201).json(user)
+            await user.save();
+            res.status(201).json(user);
         } catch (e) {
             // Обработать ошибку
+            errorHandler(res, e);
         }
     }
 }

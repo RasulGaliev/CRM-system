@@ -17,6 +17,12 @@ app.use(bodyParser.json());
 import cors from "cors";
 app.use(cors())
 
+import passport from "passport"
+app.use(passport.initialize())
+
+// import middleware from "./middleware/passport.js"
+// middleware()
+
 import morgan from "morgan";
 app.use(morgan('dev'));
 
